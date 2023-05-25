@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source">
+      <UniqueIdentifier>{17e9b9b1-79df-4a98-b918-245cff273346}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Engine">
+      <UniqueIdentifier>{96f4a181-607c-4639-9054-01cb98168c22}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Tests">
+      <UniqueIdentifier>{eca9fe4e-a86c-47c3-94c5-d58e0dab467e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Physics">
+      <UniqueIdentifier>{c52f22e1-d763-4b4b-b978-0221ddb50676}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Physics\Constraints">
+      <UniqueIdentifier>{87468421-b02a-4b90-b092-4b504b7bca06}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Physics\Forces">
+      <UniqueIdentifier>{b28932e7-5eec-4a10-a171-0ed1b922b575}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Physics\Shapes">
+      <UniqueIdentifier>{dc1493c0-cbe5-4970-ba50-ab96fdc4326f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Physics\Collision">
+      <UniqueIdentifier>{bccbc7bd-d4cf-411e-802f-2333ec9ea50e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\Engine\Graphics.cpp">
+      <Filter>Source\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Engine\Input.cpp">
+      <Filter>Source\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Engine\Primitives.cpp">
+      <Filter>Source\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Engine\Time.cpp">
+      <Filter>Source\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Physics\Constraints\Joint.cpp">
+      <Filter>Source\Physics\Constraints</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Physics\Forces\AreaForce.cpp">
+      <Filter>Source\Physics\Forces</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Physics\Forces\DragForce.cpp">
+      <Filter>Source\Physics\Forces</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Physics\Forces\ForceGenerator.cpp">
+      <Filter>Source\Physics\Forces</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Physics\Forces\GravitationalForce.cpp">
+      <Filter>Source\Physics\Forces</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Physics\Forces\PointForce.cpp">
+      <Filter>Source\Physics\Forces</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Physics\Shapes\CircleShape.cpp">
+      <Filter>Source\Physics\Shapes</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Tests\ForceTest.cpp">
+      <Filter>Source\Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Tests\JointTest.cpp">
+      <Filter>Source\Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Tests\ParticleTest.cpp">
+      <Filter>Source\Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Tests\Test.cpp">
+      <Filter>Source\Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Main.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Physics\Body.cpp">
+      <Filter>Source\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Physics\World.cpp">
+      <Filter>Source\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Physics\Collision\Collision.cpp">
+      <Filter>Source\Physics\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Tests\CollisionTest.cpp">
+      <Filter>Source\Tests</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Source\Engine\Graphics.h">
+      <Filter>Source\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\Input.h">
+      <Filter>Source\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\Primitives.h">
+      <Filter>Source\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\Random.h">
+      <Filter>Source\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Engine\Time.h">
+      <Filter>Source\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Physics\Constraints\Joint.h">
+      <Filter>Source\Physics\Constraints</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Physics\Forces\AreaForce.h">
+      <Filter>Source\Physics\Forces</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Physics\Forces\DragForce.h">
+      <Filter>Source\Physics\Forces</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Physics\Forces\ForceGenerator.h">
+      <Filter>Source\Physics\Forces</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Physics\Forces\GravitationalForce.h">
+      <Filter>Source\Physics\Forces</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Physics\Forces\PointForce.h">
+      <Filter>Source\Physics\Forces</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Physics\Shapes\CircleShape.h">
+      <Filter>Source\Physics\Shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Physics\Shapes\Shape.h">
+      <Filter>Source\Physics\Shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Tests\ForceTest.h">
+      <Filter>Source\Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Tests\JointTest.h">
+      <Filter>Source\Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Tests\ParticleTest.h">
+      <Filter>Source\Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Tests\Test.h">
+      <Filter>Source\Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Physics\Body.h">
+      <Filter>Source\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Physics\Integrator.h">
+      <Filter>Source\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Physics\World.h">
+      <Filter>Source\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Physics\Collision\Contact.h">
+      <Filter>Source\Physics\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Physics\Collision\Collision.h">
+      <Filter>Source\Physics\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Tests\CollisionTest.h">
+      <Filter>Source\Tests</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
