@@ -1,6 +1,7 @@
 #include "Graphics.h"
 #include "Primitives.h"
 #include <SDL.h>
+#include <glm/glm.hpp>
 
 Graphics::Graphics()
 {
@@ -68,7 +69,10 @@ void Graphics::DrawLine(const glm::ivec2& start, const glm::ivec2& end, const gl
 
 void Graphics::DrawCircle(const glm::ivec2& point, int radius, const glm::vec4& color)
 {
-    SetColor(color);
+    glm::ivec4 icolor = ConvertColor(color);
+    circleRGBA(m_renderer, point.x, point.y, radius, icolor.r, icolor.g, icolor.b, icolor.a);
+
+   /* SetColor(color);
     int x = 0, y = radius;
     int d = 3 - 2 * radius;
     while (x <= y) {
@@ -89,31 +93,41 @@ void Graphics::DrawCircle(const glm::ivec2& point, int radius, const glm::vec4& 
             y--;
         }
         x++;
-    }
+    }*/
 }
 void Graphics::DrawFilledCircle(const glm::ivec2& point, int radius, const glm::vec4& color)
 {
     // Set the color
-    SetColor(color);
+    glm::ivec4 icolor = ConvertColor(color);
+    filledCircleRGBA(m_renderer, point.x, point.y, radius, icolor.r, icolor.g, icolor.b, icolor.a);
+
+    //filledCircleColorRGBA(m_renderer, point.x, point.y, radius, )
 
     // Compute the center and the squared radius
-    int x0 = point.x;
+    /*int x0 = point.x;
     int y0 = point.y;
-    int r2 = radius * radius;
+    int r2 = radius * radius;*/
 
     // Scanline fill the circle
-    for (int y = -radius; y <= radius; y++) {
+    /*for (int y = -radius; y <= radius; y++) {
         for (int x = -radius; x <= radius; x++) {
             if (x * x + y * y <= r2) {
                 SDL_RenderDrawPoint(m_renderer, x0 + x, y0 + y);
             }
         }
-    }
+    }*/
 }
 
 glm::ivec4 Graphics::ConvertColor(const glm::vec4& color)
 {
-    return glm::ivec4();
+    glm::ivec4 icolor;
+
+    icolor.r = (int)(color.r * 255);
+    icolor.g = (int)(color.g * 255);
+    icolor.b = (int)(color.b * 255);
+    icolor.a = (int)(color.a * 255);
+
+    return icolor;
 }
 
 glm::vec2 Graphics::ScreenToWorld(const glm::ivec2& screen)

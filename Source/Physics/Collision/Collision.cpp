@@ -46,6 +46,8 @@ namespace Collision
 
         contact.normal = glm::normalize(direction);
 
+        contact.restitution = (bodyA->restitution + bodyB->restitution) * 0.5f;
+
         return contact;
     }
 
@@ -58,6 +60,24 @@ namespace Collision
 
             contact.bodyA->position += separation * contact.bodyA->invMass;
             contact.bodyB->position -= separation * contact.bodyB->invMass;
+        }
+    }
+
+    void ResolveContacts(std::vector<Contact>& contacts)
+    {
+        for (auto& contact : contacts)
+        {
+            glm::vec2 relativeVelocity = contact.bodyA->velocity - contact.bodyB->velocity;
+            float normalVelocity = glm::dot(relativeVelocity, contact.normal);
+
+            if (normalVelocity > 0) continue;
+            float totalInverseMass = contact.bodyA->invMass + contact.bodyB->invMass;
+
+            float impulseMagnitude = -(1.0f + contact.restitution) * normalVelocity / totalInverseMass;
+
+            glm::vec2 impulse = contact.normal * impulseMagnitude;
+            contact.bodyA->velocity += (impulse * contact.bodyA->invMass);
+            contact.bodyB->velocity -= (impulse * contact.bodyB->invMass);
         }
     }
 }

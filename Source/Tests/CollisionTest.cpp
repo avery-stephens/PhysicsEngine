@@ -9,8 +9,19 @@ void CollisionTest::Initialize()
 	m_user = new Body(new CircleShape(1, { 0, 0, 1, 1 }), { 0, 0 }, { 0, 0 }, 1, Body::KINEMATIC);
 	m_world->AddBody(m_user);
 
-	/*auto body = new Body(new CircleShape(200, glm::vec4{ 1.0f }), { 0, -207.5 }, { 0, 0 }, 1, Body::STATIC);
-	m_world->AddBody(body);*/
+	glm::vec2 extents = m_graphics->GetWorldExtents();
+
+	auto body = new Body(new CircleShape(200, glm::vec4{ 1.0f }), { 0, -(200 + extents.y) }, { 0, 0 }, 1, Body::STATIC);
+	body->restitution = 0;
+	m_world->AddBody(body);
+
+	body = new Body(new CircleShape(200, glm::vec4{ 1.0f }), { 200 + extents.x, 0.0 }, { 0, 0 }, 1, Body::STATIC);
+	body->restitution = 0;
+	m_world->AddBody(body);
+
+	body = new Body(new CircleShape(200, glm::vec4{ 1.0f }), { -(200 + extents.x), 0.0 }, { 0, 0 }, 1, Body::STATIC);
+	body->restitution = 0;
+	m_world->AddBody(body);
 }
 
 void CollisionTest::Update()
@@ -28,7 +39,8 @@ void CollisionTest::Update()
 
 		auto body = new Body(new CircleShape(size, { randomf(), randomf(), randomf(), 1 }), position, velocity, size);
 		body->damping = 0;
-		body->gravityScale = 0;
+		body->gravityScale = 0.5f;
+		body->restitution = 1;
 
 		m_world->AddBody(body);
 	}
